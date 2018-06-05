@@ -13,8 +13,8 @@ with open('Data2009.txt', 'w') as out:
     for i in lst1:
         for j in lst2:
             if i[5] == j[0]:
-                i += [j[3]]
-                i += [j[4]]
+                i[:-2] = [j[3]]
+                i[:-1] = [j[4]]
                 writer.writerow(i)
 with open('Data2009.txt') as inp, open("Data2009.csv", "w") as out:
     lines, mem = inp.readlines(), ''
