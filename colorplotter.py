@@ -23,7 +23,7 @@ for i in range(16549):
             
             
 print(t)
-ax.scatter(x, y, c=t, cmap='tab20c', s=(t/20000)**3, alpha = 0.8, marker=r'$\odot$')
+ax.scatter(x, y, c=t, cmap='gnuplot', s=(t/20000)**3, alpha = 0.8, marker=r'$\odot$')
             # ax.plot(x, y, marker = '.', markersize = '0.3', linestyle='None', color = "red")
 
 x0, x1 = 4.812657, 4.988321
