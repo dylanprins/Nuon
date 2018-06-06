@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import numpy as np
+import math
 
 data = pd.read_csv("FinalData\Data2009.csv")
 
@@ -16,13 +17,13 @@ for i in range(len(data["longitude"])):
             # x.append(data["latitude"][i])
             # temp = np.array([data["SJV"][i]])
             # sizetemp = np.array((data["SJV"][i]/20000) ** 1.2)
-            a.append(data["SJV"][i])
+            a.append(math.log(data["SJV"][i], 25))
             # size = np.concatenate([t, sizetemp])
             # t = np.concatenate([t, temp])
         
-yall = [i for i in range(len(a))]
-xall = sorted(a)
-
+xall = [i for i in range(len(a))]
+yall = sorted(a)
+print(xall)
 # ax.scatter(x, y, c=t, cmap='gist_stern', s=(t/15000)**3, alpha = 0.8, marker=r'$\odot$')
 #             # ax.plot(x, y, marker = '.', markersize = '0.3', linestyle='None', color = "red")
 

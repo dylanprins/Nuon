@@ -1,9 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
+import matplotlib
 import numpy as np
 
-data = pd.read_csv("FinalData\Data2009.csv")
+data = pd.read_csv("FinalData\Data2018.csv")
 
 
 fig = plt.figure()
@@ -25,7 +26,7 @@ for i in range(len(data["longitude"])):
 xall = [i for i in range(len(a))]
 yall = sorted(a)
 
-ax.scatter(x, y, c=t, cmap='gist_stern', s=(t/15000)**3, alpha = 0.8, marker=r'$\odot$')
+ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.8, marker=r'$\odot$', norm=matplotlib.colors.LogNorm())
             # ax.plot(x, y, marker = '.', markersize = '0.3', linestyle='None', color = "red")
 
 bx.scatter(xall, yall)
@@ -37,4 +38,4 @@ y0, y1 = 52.318159, 52.424294
 img = plt.imread("amsterdamhdmap.png")
 ax.imshow(img, extent = [x0, x1, y0, y1], aspect = "auto", zorder = 0)
 
-plt.savefig("initialPlots\initialPlot2009.png", dpi = 1300)
+plt.savefig("initialPlots\initialPlot2018.png", dpi = 1300)
