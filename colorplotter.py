@@ -26,7 +26,7 @@ for i in range(len(data["longitude"])):
 xall = [i for i in range(len(a))]
 yall = sorted(a)
 
-ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.8, marker=r'$\odot$', norm=matplotlib.colors.LogNorm())
+ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.8, marker='$\odot$', norm=matplotlib.colors.LogNorm())
             # ax.plot(x, y, marker = '.', markersize = '0.3', linestyle='None', color = "red")
 
 bx.scatter(xall, yall)
