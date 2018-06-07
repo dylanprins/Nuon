@@ -34,7 +34,7 @@ for i in range(len(data2["lon"])):
 # xall = [i for i in range(len(a))]
 # yall = sorted(a)
 
-ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.9, marker='$\odot$', norm=matplotlib.colors.LogNorm())
+# ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.9, marker='$\odot$', norm=matplotlib.colors.LogNorm())
 ax.scatter(xx, yy, c=g, cmap='viridis', s=(g/10000)**2)
 
 # bx.scatter(xall, yall)
