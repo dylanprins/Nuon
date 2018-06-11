@@ -30,14 +30,11 @@ for i in range(len(data2["lon"])):
             xx.append(data2["lon"][i])
             temp2 = np.array([data2["kwp"][i]])
             g = np.concatenate([g, temp2])
-# print(x)      
-# xall = [i for i in range(len(a))]
-# yall = sorted(a)
 
 # ax.scatter(x, y, c=t, cmap='magma_r', s=(t/15000)**3, alpha = 0.9, marker='$\odot$', norm=matplotlib.colors.LogNorm())
 ax.scatter(xx, yy, c=g, cmap='gnuplot', s=g/3000, alpha = 0.8, norm=matplotlib.colors.LogNorm())
 
-# bx.scatter(xall, yall)
+
 
 x0, x1 = 4.812657, 4.988321
 y0, y1 = 52.318159, 52.424294        
