@@ -18,7 +18,6 @@ with open('../DataBases/editDatabase2018.csv', 'r') as inp, open('witgewassenink
                 if newpostcode[0:4] == postcode[0:4]:
                     nieuwverbruik=row[16]
                     totaalverbruik = oudverbruik+nieuwverbruik
-                    oudverbruik= totaalverbruik
                     postcode = row[4]
                 else:
                     totaalverbruik = 0
