@@ -14,33 +14,36 @@ data17 = pd.read_csv("RealFinalData2017.csv")
 data18 = pd.read_csv("RealFinalData2018.csv")
 
 DataList = [data09, data10, data11, data12, data13, data14, data15, data17, data18]
-ColorList = ['red', 'green', 'blue', 'purple']
 # x1 = [i for i in range(data09["SJV"].shape[0])]
 # x2 = [i for i in range(data18["SJV"].shape[0])]
 # y1 = np.sort(data09["SJV"])
 # y2 = np.sort(data18["SJV"])
 n = 0
-print(bokeh.palettes.Category20)
 
 
+#INIT
 g = data09["SJV"].value_counts()
-print(g.keys()[0])
 p = figure(title="SJV from Centrum", x_axis_label='KWH/jaar', y_axis_label='Percentage Aansluitingen Laag-Tarief')
+yy = []
 
+# X AND Y
 x = data09["SJV"]
-y = (data09["longitude"] - 52.373852) + (data09["latitude"] - 4.898199)
-# longitude,latitude
-# 52.373852, 4.898199
-# for i in DataList:
-#     x = [j for j in range(i["SJV"].shape[0])]
-#     y = np.sort(i["SJV"])
-p.scatter(x, y, line_color=bokeh.palettes.RdYlGn[9][1])
-#     n += 1
-output_file("SJV_Centrum.html")
+for i in data09["Soort aan"]:
+    if i[0] == "O":
+        temp = 0
+    else:
+        temp = int(i[0]) * int(i[2:])
+    yy.append(temp)
+y = np.array(yy)
+y = y * data09["Aantal Aansluitingen"]
+regression = np.polyfit(x, y, 1)
+r_x, r_y = zip(*((i, i*regression[0] + regression[1]) for i in range(len(data09["latitude"]))))
 
+#LEKKER PLOTTEN
+p.scatter(x, y, line_color=bokeh.palettes.RdYlGn[9][1], alpha= 0.5)
+p.line(r_x, r_y, line_width= 4)
 
-# p.line(x1, y1)
-# p.line(x2, y2, line_color = "red")
+output_file("SJV_BELASTINGMAX.html")
 
 show(p)
 
