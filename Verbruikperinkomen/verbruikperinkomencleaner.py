@@ -9,10 +9,10 @@ def appendinkomen(postcode):
             newrow.append(postcode[0:4])
             newrow.append(oudverbruik)
             newrow.append(moneys)
-            writer.writerow(line)
+            writer.writerow(newrow)
             newrow.clear()
 
-with open('../DataBases/editDatabase2018.csv', 'r') as inp, open('witgewasseninkomen.csv', 'r') as sinp, open('verbruik per inkomen.csv', 'w') as out:
+with open('../DataBases/editDatabase2009.csv', 'r') as inp, open('witgewasseninkomen.csv', 'r') as sinp, open('verbruik per inkomen2009.csv', 'w') as out:
     writer = csv.writer(out)
     writer.writerow(['Postcode','Verbruik','Inkomen'])
     c=0
