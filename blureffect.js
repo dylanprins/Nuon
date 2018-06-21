@@ -28,8 +28,8 @@
     var update = function() {
         currentScroll = latestScroll;
         isScroll = false;
-        var helloScroll = currentScroll / 4,
-            blurScroll = currentScroll * 2;
+        var helloScroll = currentScroll / 8,
+            blurScroll = currentScroll * 4;
 
         hello.style.transform = 'translate3d(0, ' + helloScroll + 'px, 0)';
         blur.style.opacity = (blurScroll / windowHeight - .1).toFixed(2);
