@@ -28,7 +28,7 @@ header {
 	overflow: hidden;
 	width: 100%;
 	height: 100vh;
-	background: url("1.png") no-repeat;
+	background: url("websitebackgrounds/1.png") no-repeat;
 	background-size: cover;
 }
 .hello {
@@ -59,7 +59,7 @@ hgroup {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: url("2.png") no-repeat;
+	background: url("websitebackgrounds/2.png") no-repeat;
 	background-size: cover;
 	z-index: 0;
 	opacity: 0;
