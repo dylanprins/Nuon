@@ -15,8 +15,8 @@
     
         Plotly.d3.csv('https://raw.githubusercontent.com/rowangroeneveld/teststite/master/hoi.csv', function(err, rows){
         
-        var classArray = unpack(rows, 'WOONLAATS');
-        var classes = [...new Set(classArray)];
+        var classArray = unpack(rows, 'SJV');
+        var classes = Set(classArray);
     
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
@@ -41,7 +41,6 @@
                 cmax: 10000,
                 reversescale: true,
                 opacity: 0.8,
-                size: 4,
                 colorbar:{
                     thickness: 10,
                     titleside: 'right',
