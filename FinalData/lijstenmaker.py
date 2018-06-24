@@ -8,7 +8,7 @@ import csv
 #         lijst.append(row[5])
 #     csv.writer(out).writerow(sorted(set(lijst)))
 
-with open("sbk_postcode_buurtcombinatie.csv", 'r') as inp, open("placeholdervoorlijst.csv",'r') as inp2, open("placeholdervoorlijst2.csv",'w') as out:
+with open("nieuwere_sbk_postcode_buurtcombinatie.csv", 'r') as inp, open("placeholdervoorlijst.csv",'r') as inp2, open("placeholdervoorlijst2.csv",'w') as out:
     grotelijst= []
     minilijst = []
     eindpost = ''

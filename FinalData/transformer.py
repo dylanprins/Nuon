@@ -14,10 +14,3 @@ with open('Data2010.csv', 'r') as inp, open('editDataBaser2018.csv', 'w') as out
             continue   
         writer.writerow(row) 
     
-with open('editDataBaser2018.csv') as inp, open("RealFinalData2010.csv", "w") as out:
-    lines, mem = inp.readlines(), ''
-    for line in lines:
-        if line == '\n':
-            line = line.replace("\n", "")
-        mem += line
-    out.write(mem)
