@@ -12,7 +12,6 @@ with open("nieuwere_sbk_postcode_buurtcombinatie.csv", 'r') as inp, open("placeh
     grotelijst= []
     minilijst = []
     eindpost = ''
-    next(inp)
     for row in csv.reader(inp):
         beginpost = row[1]
         eindpost = row[2]
@@ -21,9 +20,10 @@ with open("nieuwere_sbk_postcode_buurtcombinatie.csv", 'r') as inp, open("placeh
                 if member == eindpost: 
                     print(eindpost)
                     minilijst.append(member)
-                    minilijst = []
                     break
                 else:
                     minilijst.append(member)
+
             csv.writer(out).writerow(minilijst)
+            minilijst = []
             break
