@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+          background-color: lightskyblue;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.3s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <nav>
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="datapage.html">Data</a>
+                <a href="algemeen.html">Algemeen</a>
+                <a href="vragen.html">Vragen en Antwoorden</a>
+        </div>
+    </nav>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+                
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <h1 style="text-align: center;">Conclusies</h1>
+    <div style="padding: 20%; position: absolute; top: -250px;">
+    <h2>Standaard vragen</h2>
+    <p>1.	<b>“Are we able to detect certain events like the Bitcoin mining or especially cold/warm winters in this data (Do note that there are multiple different sets, that each have to be handled differently).”</b></p>
+    <p>Nee, er is hier een vrij logische reden voor. De energie prijzen zijn in nederland heel erg hoog. Het is dus voor geen enkel bedrijf voordelig om in nederland te gaan minen. Er zal dus in nederland niet grootschalig gemined worden, wat resulteerd in dat er alleen kleine particulieren zijn die minen. Dat extra energie verbruik is niet groot genoeg om een significant zichtbaar verschil te maken.</p>
+        
+    <p>2.	<b>“What are the patterns you discovered that you suspect could be interesting? Does the data contain any unusual patterns that you did not expect?”</b></p>
+    <p>Als je kijkt naar de plots van het energie vebruik van alle adressen in Amsterdam, zie je dat we vanaf 2012 veel meer energie zijn gaan verbruiken dan van de jaren daarvoor. Dat is opzich best wel opmerkelijk. Aangezien je zou verwachten dat daar een gelijkmatige overgang in zou zijn, verspreid over meerdere jaren.</p>
+        
+    <p>3.	<b>“Are their clear differences in neighbourhoods/parts of Amsterdam compared to others. And are these consisten through the years/months, or can we find any changes. For instance, can we see if all these new homes being built make any difference?”</b></p>
+    <p>Wij hebben data verzameld van het verbruik en inkomen per postcode. Hier is te zien dat er in de luxere buurten, denk aan Amsterdam-Zuid en bijvoorbeeld de buurt rondt het leidseplein, waar ook het gemiddeld inkomen per persoon per jaar hoog ligt. Meer verbruikt wordt dan dat door de gemiddeld lage inkomen (en dus armere buurten) gedaan wordt. Hier was één uitschieter, De Wallen. Dit is een buurt waar het inkomen veel lager ligt dan de rest van centrum Amsterdam, maar hier wordt wel heel erg veel verbruikt. Dit is logisch te verklaren door het grote aantal horeca gelegenheden die daar aanwezig zijn.</p>
+        
+        
+        
+        
+        
+    <h2>Extra vragen</h2>
+        
+    <p>1.	<b>Is er een toename te zien in het gebruik van zonnepanelen? Groene energie wordt de laatste jaren namelijk steeds populairder.</b></p>
+    <p>Er is een enorme groei te zien in het gebruik van zonnepanelen in 2017. Het verschil tussen 2016 en 2017 is aanzienlijk groot. Dit maakt duidelijk dat steeds meer mensen zonnepanelen willen en gaan gebruiken.</p>
+    </div>
+</body>
+</html>
