@@ -1,5 +1,5 @@
 import csv
-with open('Data2010.csv', 'r') as inp, open('editDataBaser2018.csv', 'w') as out:
+with open('Data2016.csv', 'r') as inp, open('RealFinalData2016.csv', 'w') as out:
     writer = csv.writer(out)
     for row in csv.reader(inp):
         try:
