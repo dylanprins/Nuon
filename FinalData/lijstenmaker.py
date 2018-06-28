@@ -13,17 +13,17 @@ with open("nieuwere_sbk_postcode_buurtcombinatie.csv", 'r') as inp, open("placeh
     minilijst = []
     eindpost = ''
     for row in csv.reader(inp):
+        # print(row)
         beginpost = row[1]
         eindpost = row[2]
-        for word in csv.reader(inp2):
-            for member in word:
-                if member == eindpost: 
-                    print(eindpost)
-                    minilijst.append(member)
-                    break
-                else:
-                    minilijst.append(member)
-
-            csv.writer(out).writerow(minilijst)
-            minilijst = []
-            break
+        words = csv.reader(inp2)
+        for word in words:
+            print(word)
+        for member in words:
+            minilijst.append(member)
+            if member == eindpost:
+                grotelijst.append(minilijst)
+                minilijst = []
+    csv.writer(out).writerow(grotelijst)
+            
+            
