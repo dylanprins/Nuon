@@ -64,55 +64,17 @@
             color: white;
             text-decoration: none;
         }
-        #a09:hover {
-            background: url(initialPlots/plot2009.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
         }
-        #a10:hover {
-            background: url(initialPlots/plot2010.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a11:hover {
-            background: url(initialPlots/plot2011.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a12:hover {
-            background: url(initialPlots/plot2012.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a13:hover {
-            background: url(initialPlots/plot2013.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a14:hover {
-            background: url(initialPlots/plot2014.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a15:hover {
-            background: url(initialPlots/plot2015.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a16:hover {
-            background: url(initialPlots/plot2017.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a17:hover {
-            background: url(initialPlots/plot2017.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
-        }
-        #a18:hover {
-            background: url(initialPlots/plot2018.png);
-            background-repeat: no-repeat; 
-            background-size: cover;
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
         }
     </style>
 </head>
@@ -128,16 +90,20 @@
                 <a href="zonneenergie.html">Zonnepanelen Amsterdam</a>
                 <a href="verbruikperinkomen.html">Verbruik per Inkomen</a>
         </div>
-        <li><a id="a09" href="2009.html">2009</a></li>
-        <li><a id="a10" href="2010.html">2010</a></li>
-        <li><a id="a11" href="2011.html">2011</a></li>
-        <li><a id="a12" href="2012.html">2012</a></li>
-        <li><a id="a13" href="2013.html">2013</a></li>
-        <li><a id="a14" href="2014.html">2014</a></li>
-        <li><a id="a15" href="2015.html">2015</a></li>
-        <li><a id="a16" href="2016.html">2016</a></li>
-        <li><a id="a17" href="2017.html">2017</a></li>
-        <li><a id="a18" href="2018.html">2018</a></li>
+        <div class="row">
+            <div class="column">
+                <img src="initialPlots/schalen2009.png" alt="Snow" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="initialPlots/cluster.png" alt="Forest" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="initialPlots/Figure_1.png" alt="Mountains" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="initialPlots/Figure_2.png" alt="Mountains" style="width:100%">
+            </div>
+          </div>
     </nav>
     <script>
             function openNav() {
