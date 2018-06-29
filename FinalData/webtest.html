@@ -1,0 +1,105 @@
+<html>
+    
+    <head>
+      <!-- Plotly.js -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+    
+    
+    <body>
+    <!-- Plotly chart will be drawn inside this DIV -->
+    <div id="graphDiv", style="height:100%">
+      <script>
+    
+        Plotly.d3.csv('https://raw.githubusercontent.com/rowangroeneveld/teststite/master/hoi.csv', function(err, rows){
+        
+            var classArray = unpack(rows, 'dj');
+            var classes = [...new Set(classArray)];
+    
+        function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+        }
+        scl = [[0, 'rgb(150,0,90)'],[0.125, 'rgb(0, 0, 200)'],[0.25,'rgb(0, 25, 255)'],[0.375,'rgb(0, 152, 255)'],[0.5,'rgb(44, 255, 150)'],[0.625,'rgb(151, 255, 0)'],[0.75,'rgb(255, 234, 0)'],[0.875,'rgb(255, 111, 0)'],[1,'rgb(255, 0, 0)']];
+        var data = classes.map(function(classes) {
+            var rowsFiltered = rows.filter(function(row) {
+                return (row.class === classes);
+            });
+            return {
+            type: 'scattermapbox',
+            mode: 'markers',
+            text: unpack(rows, 'SJV'),
+            lat: unpack(rowsFiltered, 'longitude'),
+            lon: unpack(rowsFiltered, 'latitude'),
+            // hoverinfo='text',
+            
+            marker: {
+                color: unpack(rows, 'SJV'),
+                colorscale: scl,
+                cmin: 0,
+                cmax: 10000,
+                reversescale: true,
+                opacity: 0.8,
+                colorbar:{
+                    thickness: 10,
+                    titleside: 'right',
+                    outlinecolor: 'rgba(68,68,68,0)',
+                    ticks: 'outside',
+                    ticklen: 3,
+                    shoticksuffix: 'last',
+                    ticksuffix: 'W/H',
+                    dtick: 1000
+                }
+            },
+            name: classes,
+            };
+        });
+        
+        var layout = {
+            title: 'Energieverbruik',
+            font: {
+                color: 'white'
+            },
+            dragmode: 'zoom', 
+            mapbox: {
+                center: {
+                    lat: 52.371734,  
+                    lon: 4.896645
+                }, 
+                domain: {
+                    x: [0, 1], 
+                    y: [0, 1],
+                }, 
+                style: 'dark', 
+                zoom: 12
+            }, 
+            margin: {
+            r: 20, 
+            t: 40, 
+            b: 20, 
+            l: 20, 
+            pad: 0
+            }, 
+            paper_bgcolor: '#191A1A', 
+            plot_bgcolor: '#191A1A', 
+            showlegend: true,
+            annotations: [{
+                x: 0,
+                y: 0,
+                xref: 'paper',
+                yref: 'paper',
+                showarrow: true
+            }]
+        };
+        
+        Plotly.setPlotConfig({
+            mapboxAccessToken: 'pk.eyJ1IjoiZXRwaW5hcmQiLCJhIjoiY2luMHIzdHE0MGFxNXVubTRxczZ2YmUxaCJ9.hwWZful0U2CQxit4ItNsiQ'
+        });
+        
+        Plotly.plot('graphDiv', data, layout);
+        });
+      </script>
+    </div>
+    </body>
+    </html>
